@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dampak Gempa</title>
+</head>
+<body>
+    <script>
+        class Gempa{
+            constructor(lokasi, skala){
+                this.lokasi=lokasi;
+                this.skala=skala;
+
+            }
+            dampak(){
+                if(this.skala <= 2){
+                    return('Gempa tidak terasa');
+                }
+                else if (this.skala > 2 && this.skala <=4){
+                    return('Bangunan retak-retak');
+                }
+                else if (this.skala > 4 && this.skala <=6){
+                    return('Bangunan roboh');
+                }
+                else if (this.skala > 6){
+                    return('Selain bangunan roboh juga berpotensi tsunami');
+                }
+                else{
+                    return;
+                }
+            }
+            cetak(){
+                document.write(`Lokasi : ${this.lokasi}
+                <br/> Skala :${this.skala} Magnitudo
+                <br/> Dampak : ${this.dampak()}<hr/>`)
+            }
+
+        }
+        let gempa1 = new Gempa('Yogyakarta',3.5);
+        let gempa2 = new Gempa('Pekanbaru',4);
+        let gempa3 = new Gempa('Magelang',2);
+        let gempa4 = new Gempa('Kalimantan',5);
+        let gempa5 = new Gempa('Papua', 8);
+        let gempa6 = new Gempa('Lombok', 7);
+        let gempa7 = new Gempa('Semarang', 2.5);
+        let gempa8 = new Gempa('Bandung', 5.5);
+
+        gempa1.cetak(); gempa2.cetak();
+        gempa3.cetak(); gempa4.cetak();
+        gempa5.cetak(); gempa6.cetak();
+        gempa7.cetak(); gempa8.cetak();
+    </script>
+</body>
+</html>
